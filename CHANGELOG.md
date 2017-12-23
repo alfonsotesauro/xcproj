@@ -5,6 +5,7 @@
 ### Added
 - Add breakpoint `condition` parameter by [@alexruperez](https://github.com/alexruperez).
 - Support Xcode Extension product type https://github.com/xcodeswift/xcproj/pull/190 by @briantkelley
+- Support for the legacy Build Carbon Resources build phase https://github.com/xcodeswift/xcproj/pull/196 by @briantkelley
 
 ### Fixed
 - Optimised escaping of CommentedString https://github.com/xcodeswift/xcproj/pull/195 by @kastiglione
