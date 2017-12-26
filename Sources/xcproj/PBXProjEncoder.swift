@@ -49,6 +49,7 @@ final class PBXProjEncoder {
         write(section: "XCBuildConfiguration", proj: proj, object: proj.objects.buildConfigurations)
         write(section: "XCConfigurationList", proj: proj, object: proj.objects.configurationLists)
         write(section: "XCVersionGroup", proj: proj, object: proj.objects.versionGroups)
+        write(section: "PBXBuildRule", proj: proj, object: proj.objects.buildRules)
         decreaseIndent()
         writeIndent()
         write(string: "};")

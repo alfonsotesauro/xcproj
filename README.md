@@ -36,6 +36,7 @@ Being able to write command line scripts in Swift to update your Xcode projects 
 - Add new `Build phases`.
 - Update the project `Build Settings`.
 - Create new `Schemes`.
+- Update the project `Build Rules`.
 
 ## Projects that benefit from xcproj ❤️
 
@@ -126,6 +127,7 @@ Among other properties, the most important one in the `PBXProj` object is `Objec
 - **Target objects**: Define your project targets and dependencies between them.
 - **Configuration objects**: Define the available configs and the link between them and the targets.
 - **File objects**: Define the project files, build files and groups.
+- **Build Rules**: Define the project custom build rules.
 
 All objects subclass `PBXObject`, and have an unique & deterministic reference. Moreover, they are hashable and conform the `Equatable` protocol.
 
@@ -185,6 +187,14 @@ let buildFile = PBXBuildFile(reference: "yyy", fileRef: homeViewController.refer
 project.pbxproj.objects.addObject(buildFile)
 sourcesBuildPhase.files.append(buildFile.reference)
 ```
+
+#### Add custom Build Rule that for each `*.swift` file executes custom script
+
+```swift
+let customRule = PBXBuildRule(reference: "xxx", fileType: .swift, outputFiles: [], compiler: .customScript, script:"## custom script")
+project.pbxproj.objects.addObject(customRule)
+```
+
 
 ## Documentation 📄
 You can check out the documentation on the following [link](https://xcodeswift.github.io/xcproj/index.html). The documentation is automatically generated in every release by using [Jazzy](https://github.com/realm/jazzy) from [Realm](https://realm.io).
